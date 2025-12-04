@@ -47,3 +47,6 @@
 2025-12-04 22:43:22.887 INFO  [http-nio-8080-exec-1] a.s.order.service.StockMovementService - Stock Movement created: ID=49dfb420-1c99-4a29-abb5-fbe3ca6b44eb, Item ID=36430225-6380-4745-ab25-df550e6b436a, Quantity=300
 2025-12-04 22:43:22.887 INFO  [http-nio-8080-exec-1] a.s.order.service.StockMovementService - --- Stock Movement positivo. A verificar satisfação de pedidos pendentes. ---
 2025-12-04 22:43:23.200 INFO  [http-nio-8080-exec-1] ao.sibs.order.service.OrderService - No pending orders found for Item ID: 36430225-6380-4745-ab25-df550e6b436a
+2025-12-04 23:03:58.164 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-04 23:03:58.196 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-12-04 23:03:59.731 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
