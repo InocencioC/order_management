@@ -1,0 +1,49 @@
+2025-12-04 22:30:39.058 INFO  [main] ao.sibs.order.OrderApplication - Starting OrderApplication using Java 21.0.5 on DESKTOP-JJJM4GD with PID 3812 (C:\Users\inoce\Documents\GitHub\order\target\classes started by inoce in C:\Users\inoce\Documents\GitHub\order)
+2025-12-04 22:30:39.062 INFO  [main] ao.sibs.order.OrderApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-04 22:30:40.084 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-04 22:30:40.173 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 79 ms. Found 4 JPA repository interfaces.
+2025-12-04 22:30:40.992 INFO  [main] o.s.b.w.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-12-04 22:30:41.009 INFO  [main] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-04 22:30:41.011 INFO  [main] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-12-04 22:30:41.259 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-04 22:30:41.259 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2141 ms
+2025-12-04 22:30:41.558 INFO  [main] o.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-04 22:30:41.647 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-12-04 22:30:41.915 INFO  [main] org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-12-04 22:30:42.064 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-12-04 22:30:44.525 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-12-04 22:30:44.563 INFO  [main] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2025-12-04 22:30:48.391 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-12-04 22:30:48.402 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-04 22:30:49.155 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-04 22:30:50.691 INFO  [main] o.s.b.w.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-12-04 22:30:50.703 INFO  [main] ao.sibs.order.OrderApplication - Started OrderApplication in 12.249 seconds (JVM running for 13.391)
+2025-12-04 22:42:07.299 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-04 22:42:07.333 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-12-04 22:42:07.379 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-12-04 22:42:17.779 INFO  [main] ao.sibs.order.OrderApplication - Starting OrderApplication using Java 21.0.5 on DESKTOP-JJJM4GD with PID 15440 (C:\Users\inoce\Documents\GitHub\order\target\classes started by inoce in C:\Users\inoce\Documents\GitHub\order)
+2025-12-04 22:42:17.782 INFO  [main] ao.sibs.order.OrderApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-04 22:42:18.638 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-04 22:42:18.709 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 60 ms. Found 4 JPA repository interfaces.
+2025-12-04 22:42:19.267 INFO  [main] o.s.b.w.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-12-04 22:42:19.277 INFO  [main] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-04 22:42:19.277 INFO  [main] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-12-04 22:42:19.391 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-04 22:42:19.392 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1538 ms
+2025-12-04 22:42:19.577 INFO  [main] o.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-04 22:42:19.636 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-12-04 22:42:19.850 INFO  [main] org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-12-04 22:42:19.961 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-12-04 22:42:22.529 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-12-04 22:42:22.566 INFO  [main] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2025-12-04 22:42:26.609 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-12-04 22:42:26.624 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-04 22:42:27.305 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-04 22:42:28.539 INFO  [main] o.s.b.w.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-12-04 22:42:28.547 INFO  [main] ao.sibs.order.OrderApplication - Started OrderApplication in 11.36 seconds (JVM running for 12.973)
+2025-12-04 22:43:21.720 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-04 22:43:21.726 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-04 22:43:21.777 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 50 ms
+2025-12-04 22:43:22.887 INFO  [http-nio-8080-exec-1] a.s.order.service.StockMovementService - Stock Movement created: ID=49dfb420-1c99-4a29-abb5-fbe3ca6b44eb, Item ID=36430225-6380-4745-ab25-df550e6b436a, Quantity=300
+2025-12-04 22:43:22.887 INFO  [http-nio-8080-exec-1] a.s.order.service.StockMovementService - --- Stock Movement positivo. A verificar satisfação de pedidos pendentes. ---
+2025-12-04 22:43:23.200 INFO  [http-nio-8080-exec-1] ao.sibs.order.service.OrderService - No pending orders found for Item ID: 36430225-6380-4745-ab25-df550e6b436a

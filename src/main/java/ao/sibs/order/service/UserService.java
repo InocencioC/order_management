@@ -4,6 +4,7 @@ import ao.sibs.order.dto.UserUpdateDTO;
 import ao.sibs.order.entity.User;
 import ao.sibs.order.exception.ResourceNotFoundException;
 import ao.sibs.order.repository.UserRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -11,6 +12,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+@Slf4j
 @Service
 public class UserService {
 
@@ -49,9 +51,7 @@ public class UserService {
         return userRepository.save(existingUser);
     }
 
-
     public void delete(UUID id) {
         userRepository.deleteById(id);
     }
-
 }
