@@ -1,6 +1,9 @@
 package ao.sibs.order.service;
 
+import ao.sibs.order.dto.ItemRequestDTO;
+import ao.sibs.order.dto.ItemResponseDTO;
 import ao.sibs.order.entity.Item;
+import ao.sibs.order.mappers.ItemMapper;
 import ao.sibs.order.repository.ItemRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,9 +22,14 @@ public class ItemService {
     private final ItemRepository itemRepository;
 
     @Transactional
-    public Item create(Item item) {
-        log.info("Creating new Item: {}", item.getName());
-        return itemRepository.save(item);
+    public ItemResponseDTO create(ItemRequestDTO itemRequestDTO) {
+        log.info("Creating new Item: {}", itemRequestDTO.getName());
+
+        Item itemToSave = ItemMapper.toEntity(itemRequestDTO);
+
+        Item savedItem = itemRepository.save(itemToSave);
+
+        return ItemMapper.toResponseDTO(savedItem);
     }
 
     @Transactional(readOnly = true)

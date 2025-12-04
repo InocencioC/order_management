@@ -1,5 +1,7 @@
 package ao.sibs.order.controller;
 
+import ao.sibs.order.dto.StockMovementRequestDTO;
+import ao.sibs.order.dto.StockMovementResponseDTO;
 import ao.sibs.order.entity.StockMovement;
 import ao.sibs.order.service.StockMovementService;
 import org.springframework.http.ResponseEntity;
@@ -19,8 +21,8 @@ public class StockMovementController {
     }
 
     @PostMapping
-    public ResponseEntity<StockMovement> createStockMovement(@RequestBody StockMovement stockMovement) {
-        StockMovement createdMovement = stockMovementService.createMovement(stockMovement);
-                return ResponseEntity.status(201).body(createdMovement);
+    public ResponseEntity<StockMovementResponseDTO> createStockMovement(@RequestBody StockMovementRequestDTO requestDTO) {
+        StockMovementResponseDTO response = stockMovementService.createMovement(requestDTO);
+                return ResponseEntity.status(201).body(response);
     }
 }

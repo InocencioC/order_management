@@ -1,5 +1,7 @@
 package ao.sibs.order.controller;
 
+import ao.sibs.order.dto.ItemRequestDTO;
+import ao.sibs.order.dto.ItemResponseDTO;
 import ao.sibs.order.entity.Item;
 import ao.sibs.order.service.ItemService;
 import org.springframework.http.ResponseEntity;
@@ -19,8 +21,8 @@ public class ItemController {
     }
 
     @PostMapping
-    public ResponseEntity<Item> create(@RequestBody Item item) {
-        Item createdItem = itemService.create(item);
+    public ResponseEntity<ItemResponseDTO> create(@RequestBody ItemRequestDTO item) {
+        ItemResponseDTO createdItem = itemService.create(item);
         return ResponseEntity.status(201).body(createdItem);
     }
 

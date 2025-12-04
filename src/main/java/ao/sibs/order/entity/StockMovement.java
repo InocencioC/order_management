@@ -10,6 +10,7 @@ import org.springframework.data.annotation.CreatedDate;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.UUID;
 
 @Data
 @NoArgsConstructor
@@ -22,7 +23,7 @@ public class StockMovement {
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
     @Column(name = "id",  columnDefinition = "uuid")
-    private String id;
+    private UUID id;
 
     @CreationTimestamp
     private LocalDateTime creationDate;
@@ -38,6 +39,4 @@ public class StockMovement {
     @JoinColumn(name = "order_id")
     private Order order;
 
-    @CreatedDate
-    private Date creationData;
 }

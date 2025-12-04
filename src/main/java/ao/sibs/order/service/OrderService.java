@@ -1,8 +1,10 @@
 package ao.sibs.order.service;
 
-import ao.sibs.order.entity.Order;
-import ao.sibs.order.entity.OrderStatus;
-import ao.sibs.order.entity.StockMovement;
+import ao.sibs.order.dto.OrderRequestDTO;
+import ao.sibs.order.dto.OrderResponseDTO;
+import ao.sibs.order.entity.*;
+import ao.sibs.order.mappers.OrderMapper;
+import ao.sibs.order.repository.ItemRepository;
 import ao.sibs.order.repository.OrderRepository;
 import ao.sibs.order.repository.StockMovementRepository;
 import ao.sibs.order.repository.UserRepository;
@@ -24,6 +26,7 @@ public class OrderService {
     private final OrderRepository orderRepository;
     private final StockMovementRepository stockMovementRepository;
     private final NotificationService notificationService;
+    private  final ItemRepository itemRepository;
 
     public Optional<Order> findById(UUID id) {
         return orderRepository.findById(id);
@@ -34,13 +37,23 @@ public class OrderService {
     }
 
     @Transactional
-    public Order createOrder(Order order) {
+    public OrderResponseDTO createOrder(OrderRequestDTO requestDTO) {
+
+        User user = userRepository.findById(requestDTO.getUserId())
+                .orElseThrow(() -> new RuntimeException("User not found with ID: " + requestDTO.getUserId()));
+
+        Item item = itemRepository.findById(requestDTO.getItemId())
+                .orElseThrow(() -> new RuntimeException("Item not found with ID: " + requestDTO.getItemId()));
+
+        Order order = OrderMapper.toEntity(user, item, requestDTO.getQuantity());
+
         order.setStatus(OrderStatus.PENDING);
         Order savedOrder = orderRepository.save(order);
 
         log.info("Order created with ID : {}", savedOrder.getId());
         tryToFulfillOrder(savedOrder);
-        return savedOrder;
+
+        return OrderMapper.toResponseDTO(savedOrder);
     }
 
     private void tryToFulfillOrder(Order order) {
