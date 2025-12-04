@@ -13,6 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -28,8 +29,9 @@ public class OrderService {
     private final NotificationService notificationService;
     private  final ItemRepository itemRepository;
 
-    public Optional<Order> findById(UUID id) {
-        return orderRepository.findById(id);
+    public Optional<OrderResponseDTO> findById(UUID id) {
+        return orderRepository.findById(id)
+                .map(OrderMapper::toResponseDTO);
     }
 
     public List<Order> findAll() {
@@ -66,7 +68,8 @@ public class OrderService {
         Integer currentStock = stockMovementRepository.getCurrentQuantity(itemId);
 
         if (currentStock >= requiredQuantity) {
-            StockMovement stockMovement = stockMovementRepository.findById(itemId).get();
+
+            StockMovement stockMovement = new StockMovement();
             stockMovement.setItem(order.getItem());
             stockMovement.setQuantity(-requiredQuantity);
             stockMovement.setOrder(order);
@@ -76,7 +79,11 @@ public class OrderService {
             order.setFulfilledQuantity(order.getQuantity());
             order.setStatus(OrderStatus.COMPLETED);
 
-            order.getAppliedMovements().add(stockMovement);
+            if (order.getAppliedMovements() == null) {
+                order.setAppliedMovements(new ArrayList<>());
+            }
+            order.getAppliedMovements().add(savedMovement);
+
             orderRepository.save(order);
 
             log.info("ORDER COMPLETED (ID: {}). Movement applied: {}", order.getId(), savedMovement.getId());
@@ -90,7 +97,7 @@ public class OrderService {
 
 
     public String getCompletionStatus(UUID orderId) {
-        Order order = findById(orderId)
+        OrderResponseDTO order = findById(orderId)
                 .orElseThrow(() -> new RuntimeException("Order not found with ID: " + orderId));
 
         double completionRate = (double) order.getFulfilledQuantity() / order.getQuantity();

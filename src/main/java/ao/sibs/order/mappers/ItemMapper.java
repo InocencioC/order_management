@@ -24,6 +24,7 @@ public class ItemMapper {
         ItemResponseDTO dto = new ItemResponseDTO();
         dto.setId(item.getId());
         dto.setName(item.getName());
+
         return dto;
     }
 }

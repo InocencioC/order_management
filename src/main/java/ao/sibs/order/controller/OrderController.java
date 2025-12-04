@@ -3,12 +3,14 @@ package ao.sibs.order.controller;
 import ao.sibs.order.dto.OrderRequestDTO;
 import ao.sibs.order.dto.OrderResponseDTO;
 import ao.sibs.order.entity.Order;
+import ao.sibs.order.mappers.OrderMapper;
 import ao.sibs.order.service.OrderService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/v1/orders")
@@ -26,7 +28,7 @@ public class OrderController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Order> getOrderById(@PathVariable UUID id) {
+    public ResponseEntity<OrderResponseDTO> getOrderById(@PathVariable UUID id) {
         return orderService.findById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
@@ -50,7 +52,9 @@ public class OrderController {
     }
 
     @GetMapping
-    public List<Order> getAllOrders() {
-        return orderService.findAll();
+    public List<OrderResponseDTO> getAllOrders() {
+        return orderService.findAll().stream()
+                .map(OrderMapper::toResponseDTO)
+                .collect(Collectors.toList());
     }
 }

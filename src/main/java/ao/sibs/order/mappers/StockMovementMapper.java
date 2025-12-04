@@ -37,6 +37,7 @@ public class StockMovementMapper {
         }
         ItemResponseDTO itemResponseDto = new ItemResponseDTO();
         itemResponseDto.setId(item.getId());
+        itemResponseDto.setName(item.getName());
         return itemResponseDto;
     }
 }
