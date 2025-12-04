@@ -1,8 +1,6 @@
-Com certeza\! Aqui está o arquivo `README.md` completo, incluindo todos os endpoints da sua coleção Postman e as instruções para aceder ao Swagger UI.
 
------
 
-# 📚 SIBS Order Management System
+# 📚 Order Management System
 
 ## Visão Geral do Projeto
 
