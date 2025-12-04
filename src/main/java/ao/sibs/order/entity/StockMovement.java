@@ -5,9 +5,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -19,7 +21,7 @@ public class StockMovement {
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
-    @Column(columnDefinition = "BINARY(16)")
+    @Column(name = "id",  columnDefinition = "uuid")
     private String id;
 
     @CreationTimestamp
@@ -35,4 +37,7 @@ public class StockMovement {
     @ManyToOne
     @JoinColumn(name = "order_id")
     private Order order;
+
+    @CreatedDate
+    private Date creationData;
 }
